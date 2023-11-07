@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Data Cloud</title>
+    <link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+    <style>
+       body {
+            background-color: #14161D;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+            <div class="Ellipse27" style="width: 225px; height: 225px; left: -17px; top: -50px; position: absolute; background: rgba(32, 142, 94, 0.25); box-shadow: 300px 300px 300px; border-radius: 9999px; filter: blur(125px)"></div>
+            <div class="Ellipse28" style="width: 225px; height: 50px; left: 859px; top: 343px; position: absolute; background: white; box-shadow: 300px 300px 300px; border-radius: 9999px; filter: blur(125px)"></div>
+            <div class="Ellipse25" style="width: 225px; height: 225px; left: 1084px; top: 315px; position: absolute; background: rgba(52.80, 142.38, 127.75, 0.80); box-shadow: 300px 300px 300px; border-radius: 9999px; filter: blur(125px)"></div>
+            <div class="Ellipse26" style="width: 205px; height: 205px; left: 668px; top: 424px; position: absolute; background: rgba(255, 151.94, 151.94, 0.40); box-shadow: 335px 335px 335px; border-radius: 9999px; filter: blur(125px)"></div>
+            <div class="Rectangle176" style="width: 692px; height: 67px; left: 629px; top: 215px; position: absolute; background: rgba(40, 40, 40, 0.25); border-radius: 8px; backdrop-filter: blur(14px)"></div>
+            <div class="Rectangle178" style="width: 692px; height: 330px; left: 629px; top: 315px; position: absolute; background: rgba(40, 40, 40, 0.25); border-radius: 34px; backdrop-filter: blur(14px)"></div>
+            <div style="left: 665px; top: 233px; position: absolute; color: white; font-size: 24px; font-family: VK Sans Display; font-weight: 700; word-wrap: break-word">Делитесь файлами быстро, качественно, анонимно</div>
+            <div class="MyDataCloud" style="left: 860px; top: 348px; position: absolute; color: white; font-size: 32px; font-family: VK Sans Display; font-weight: 700; word-wrap: break-word">My Data Cloud</div>
+            <div class="MyDataCloudMadeByReyzov" style="left: 881px; top: 96%; position: absolute; color: rgba(98.81, 98.81, 98.81, 0.25); font-size: 11px; font-family: VK Sans Display; font-weight: 500; word-wrap: break-word">My Data Cloud made by @reyzov</div>
+            <div class="Ellipse29" style="width: 225px; height: 225px; left: 823px; top: 461px; position: absolute; background: rgba(91.80, 51, 255, 0.25); box-shadow: 300px 300px 300px; border-radius: 9999px; filter: blur(300px)"></div>
+
+            <div class="Rectangle179" style="width: 423px; height: 91px; left: 764px; top: 435px; position: absolute; border-radius: 11px; border: 2.5px #6C6C6C dotted"></div>
+                
+
+            <form action="/" method="post" enctype="multipart/form-data" id="upload-form">
+                <label for="file-upload" id="file-label" style="cursor: pointer; left: 910px; top: 473px; height: 26px; color: #B4B4B4; font-size: 17px; font-family: VK Sans Display; font-weight: 700; word-wrap: break-word; position: absolute;">
+                    ВЫБЕРИТЕ ФАЙЛ
+                </label>
+                <input type="file" name="file" id="file-upload" style="display: none; width: 80px; cursor: pointer; height: 26px; position: absolute; cursor: pointer;" onchange="updateFileName()"></input>
+                <input type="submit" id="submit-button" class="Rectangle181" style="width: 173px; cursor: pointer; color: white; font-size: 11px; font-family: VK Sans Display; font-weight: 700; word-wrap: break-word; height: 27px; left: 889px; top: 573px; position: absolute; background: #A9B4FB; box-shadow: 0px 0px 14px 2px rgba(169, 180, 251, 0.15); border-radius: 8px; border: none;" value="Загрузить файл"></input>
+            </form>
+        
+            <script>
+                function updateFileName() {
+                    var input = document.getElementById('file-upload');
+                    var label = document.getElementById('file-label');
+                    var submitButton = document.getElementById('submit-button');
+                    if (input.files.length > 0) {
+                        if (input.files[0].name.length > 15) {
+                            label.textContent = input.files[0].name.slice(0, 15) + "...";
+                        }else {
+                            label.textContent = input.files[0].name.slice(0, 15);
+                        }
+                        submitButton.disabled = false;
+                    } else {
+                        label.textContent = "ВЫБЕРИТЕ ФАЙЛ";
+                        submitButton.disabled = true;
+                    }
+                }
+            </script>
+
+        </body>
+</html>
+
+       
