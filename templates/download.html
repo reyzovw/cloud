@@ -25,12 +25,17 @@
     <div class="Ellipse26" style="width: 205px; height: 205px; left: 735px; top: 323px; position: absolute; background: rgba(255, 151.94, 151.94, 0.40); box-shadow: 335px 335px 335px; border-radius: 9999px; filter: blur(155px)"></div>
     <div class="Rectangle178" style="width: 379px; height: 170px; left: 775px; top: 347px; position: absolute; background: rgba(40, 40, 40, 0.25); border-radius: 34px; backdrop-filter: blur(14px)"></div>
     <div class="TestTxt" style="left: 865px; top: 368px; position: absolute; color: white; font-size: 32px; font-family: VK Sans Display; font-weight: 700; word-wrap: break-word">Информация</div>
-    
+
     <form method="POST">
         <input type="submit" class="Rectangle181" style="width: 173px; height: 27px; left: 872px; top: 464px; position: absolute; background: #A9B4FB; box-shadow: 0px 0px 14px 2px rgba(169, 180, 251, 0.15); border-radius: 8px; border: none; color: white; font-size: 11px; font-family: VK Sans Display; font-weight: 700; word-wrap: break-word; cursor: pointer;" value="Скачать файл"/>
     </form>
 
-    <img class="Check11" style="width: 30px; height: 30px; left: 868px; top: 417px; position: absolute" src="{{ url_for('static', filename='images/check.png') }}" />
-    <div class="Vt" style="left: 905px; top: 425px; position: absolute; color: white; font-size: 11px; font-family: VK Sans Display; font-weight: 700; word-wrap: break-word">VT: Вирусов не обнаруженно</div>
-</body>
+    {% if vt > 0 %}
+        <img class="Check11" style="width: 30px; height: 30px; left: 868px; top: 417px; position: absolute" src="{{ url_for('static', filename='images/remove.png') }}" />
+        <div class="Vt" style="left: 905px; top: 425px; position: absolute; color: white; font-size: 11px; font-family: VK Sans Display; font-weight: 700; word-wrap: break-word">VT: Найденно вирусов {{ vt }} шт.</div>
+    {% else %}
+        <img class="Check11" style="width: 30px; height: 30px; left: 868px; top: 417px; position: absolute" src="{{ url_for('static', filename='images/check.png') }}" />
+        <div class="Vt" style="left: 905px; top: 425px; position: absolute; color: white; font-size: 11px; font-family: VK Sans Display; font-weight: 700; word-wrap: break-word">VT: Вирусов не найденно</div>
+    {% endif %}
+    </body>
 </html>
